@@ -9,9 +9,21 @@
 
 <hr>
 
-### Important: Source Repository Notice
+## Important: Quick Start & How To Use Radix Linux Distrubition:
 
-Radix Linux is now a fully source-based distribution repository and does not contain any prebuilt system image or ready-to-run root filesystem. Instead, this repository provides a structured build system composed of categorized source archives and automation scripts that allow users to construct the entire operating system from scratch in a controlled and reproducible way. The goal of this design is to ensure transparency, modularity, and full user control over the final system.
+
+### For Users: 
+If you are looking for a bootable ISO or a ready-to-run distribution, please navigate to the Releases section. There you can find pre-built images and latest stable versions.
+
+### For Developers:
+This repository itself is a Source Archive & Base System. It is designed to be a transparent foundation for other distributions and to simplify release tracking. If you want to customize Radix or build it from scratch, follow the **Build Pipeline** below.
+
+
+## Build Pipeline Overview
+
+The build system is executed in a strict order to ensure a clean and fully functional Linux base system. Each script is responsible for a specific layer of the operating system, starting from the toolchain and ending with user-level utilities and development environments. The correct execution order is essential for a successful build.
+
+
 
 ### Cloning the Repository
 To get started with the latest version, use the git clone command:
@@ -19,12 +31,6 @@ To get started with the latest version, use the git clone command:
 ```
 git clone --depth 1 https://github.com/VFL-DEEP/Radix-Linux.git
 ```
-
-
-## Build Pipeline Overview
-
-The build system is executed in a strict order to ensure a clean and fully functional Linux base system. Each script is responsible for a specific layer of the operating system, starting from the toolchain and ending with user-level utilities and development environments. The correct execution order is essential for a successful build.
-
 
 
 ### 1. Toolchain Setup
