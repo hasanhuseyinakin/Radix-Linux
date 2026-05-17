@@ -1,6 +1,6 @@
 <p align="center"><img src="/img/newlogo.jpg" alt="radix os logo" width="200"></p>
 
-<h1 align="center">Radix Linux 1.0.0 Beta Version</h1>
+<h1 align="center">Radix Linux 1.0 Beta Version</h1>
 
 <p align="center">Radix Linux is a lightweight Linux distribution currently in beta, designed specifically for students.
  It is built from scratch to run efficiently on low-resource hardware and offers Turkish language support. 
