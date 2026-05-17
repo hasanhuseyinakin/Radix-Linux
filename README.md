@@ -9,11 +9,11 @@
 
 <hr>
 
-## Important: Source Repository Notice
+### Important: Source Repository Notice
 
 Radix Linux is now a fully source-based distribution repository and does not contain any prebuilt system image or ready-to-run root filesystem. Instead, this repository provides a structured build system composed of categorized source archives and automation scripts that allow users to construct the entire operating system from scratch in a controlled and reproducible way. The goal of this design is to ensure transparency, modularity, and full user control over the final system.
 
-## Cloning the Repository
+### Cloning the Repository
 To get started with the latest version, use the git clone command:
 
 ```
@@ -21,13 +21,13 @@ git clone --depth 1 https://github.com/VFL-DEEP/Radix-Linux.git
 ```
 
 
-### Build Pipeline Overview
+## Build Pipeline Overview
 
 The build system is executed in a strict order to ensure a clean and fully functional Linux base system. Each script is responsible for a specific layer of the operating system, starting from the toolchain and ending with user-level utilities and development environments. The correct execution order is essential for a successful build.
 
 
 
-1. Toolchain Setup
+#### 1. Toolchain Setup
 
 The toolchain stage initializes the compiler environment, assembler, linker, and core build utilities required to compile the rest of the system from source. This is the foundation of the entire distribution and must be completed before any other package is built.
 
@@ -37,7 +37,7 @@ The toolchain stage initializes the compiler environment, assembler, linker, and
      ```
 
 
-2. Temporary Tools Setup
+### 2. Temporary Tools Setup
 
 This stage installs and prepares temporary bootstrap utilities required during the early build phases, ensuring that the system has minimal operational tools before full system libraries are available.
    
@@ -47,7 +47,7 @@ This stage installs and prepares temporary bootstrap utilities required during t
      ```
 
 
-3. Extended Temporary Tools
+### 3. Extended Temporary Tools
 
 This step expands the bootstrap environment by adding additional helper utilities that support compilation, patching, and intermediate build operations required by later stages.
 
@@ -57,7 +57,7 @@ This step expands the bootstrap environment by adding additional helper utilitie
      ```
 
 
- 4. Basic System Softwares
+ ### 4. Basic System Softwares
 
 This stage builds and installs essential base system software such as core utilities, shell tools, and fundamental system binaries required for a functional Linux environment.
     
@@ -67,7 +67,7 @@ This stage builds and installs essential base system software such as core utili
      ```
 
      
- 5. Kernel Build
+ ### 5. Kernel Build
 
 This step compiles and installs the Linux kernel, which provides hardware interaction, process management, and core system functionality required for system boot and runtime operations.
  
@@ -77,7 +77,7 @@ This step compiles and installs the Linux kernel, which provides hardware intera
      ```
 
 
-6. Bootloader Installation
+### 6. Bootloader Installation
 
 This stage installs and configures the bootloader responsible for system startup, allowing the kernel to be loaded and the operating system to initialize correctly.
 
@@ -87,7 +87,7 @@ This stage installs and configures the bootloader responsible for system startup
      ```
 
 
-7. Security Layer
+### 7. Security Layer
 
 This stage applies system-level security configurations, permissions hardening, and baseline security policies to ensure a stable and controlled environment.
 
@@ -98,7 +98,7 @@ This stage applies system-level security configurations, permissions hardening, 
 
 
 
-8. General Libraries
+### 8. General Libraries
 
 This step installs core system libraries required by both system components and user applications, ensuring compatibility and runtime support.
 
@@ -108,7 +108,7 @@ This step installs core system libraries required by both system components and 
      ```
 
 
-9. Networking Libraries
+### 9. Networking Libraries
 
 This stage installs networking-related libraries and components required for connectivity, communication protocols, and internet functionality.
 
@@ -118,7 +118,7 @@ This stage installs networking-related libraries and components required for con
      ```
 
      
-10. Text Editors
+### 10. Text Editors
 
 This step installs command-line and basic text editing tools required for system configuration and development tasks.
 
@@ -128,7 +128,7 @@ This step installs command-line and basic text editing tools required for system
      ```
 
   
-11. Programming Tools
+### 11. Programming Tools
 
 This stage installs development tools, compilers, interpreters, and debugging utilities required for software development on the system.
 
@@ -138,7 +138,7 @@ This stage installs development tools, compilers, interpreters, and debugging ut
      ```
 
      
-12. Graphics Libraries
+### 12. Graphics Libraries
 
 This step installs graphical subsystem libraries required for rendering, display management, and GUI-based applications.
 
@@ -148,7 +148,7 @@ This step installs graphical subsystem libraries required for rendering, display
      ```
 
 
-13. File Management Tools
+### 13. File Management Tools
 
 This final stage installs file management utilities that provide user-level file operations, system navigation, and data handling capabilities.
 
