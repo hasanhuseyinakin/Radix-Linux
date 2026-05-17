@@ -2,99 +2,162 @@
 
 <h1 align="center">Radix Linux 0.9.2 Alpha Version</h1>
 
-<p align="center">Radix Linux is a lightweight Linux distribution currently in beta, designed specifically for students.
+<p align="center">Radix Linux is a lightweight Linux distribution currently in alpha, designed specifically for students.
  It is built from scratch to run efficiently on low-resource hardware and offers Turkish language support. 
  This early version invites testing and feedback from its users.
  https://www.reddit.com/r/RadixLinuxCommunity/</p>
 
 <hr>
 
-## How to install Radix Linux on your Chroot Virtual Environment?
+## Important: Source Repository Notice
+
+Radix Linux is now a fully source-based distribution repository and does not contain any prebuilt system image or ready-to-run root filesystem. Instead, this repository provides a structured build system composed of categorized source archives and automation scripts that allow users to construct the entire operating system from scratch in a controlled and reproducible way. The goal of this design is to ensure transparency, modularity, and full user control over the final system.
+
+## Cloning the Repository
+To get started with the latest version, use the git clone command:
+
+```
+git clone --depth 1 https://github.com/VFL-DEEP/Radix-Linux.git
+```
 
 
-1. To interact with your filesystem mount points, you must first switch to the root user. We will also initialize a global variable to simplify the commands used throughout this guide.
+### Build Pipeline Overview
 
-   - **You can change to root user and create the variable with this command**:
+The build system is executed in a strict order to ensure a clean and fully functional Linux base system. Each script is responsible for a specific layer of the operating system, starting from the toolchain and ending with user-level utilities and development environments. The correct execution order is essential for a successful build.
+
+
+
+1. Toolchain Setup
+
+The toolchain stage initializes the compiler environment, assembler, linker, and core build utilities required to compile the rest of the system from source. This is the foundation of the entire distribution and must be completed before any other package is built.
+
+   - **You can setup the toolchain with this command**:
      ```
-     sudo su
-     export radixlinux=/home/yourusernamehere/Radix-Linux
+     ./toolchain.sh
      ```
 
 
-2. Once the variable is defined, set the umask to ensure consistent file permissions, as your host distribution may use a different default value.
+2. Temporary Tools Setup
+
+This stage installs and prepares temporary bootstrap utilities required during the early build phases, ensuring that the system has minimal operational tools before full system libraries are available.
    
-   - **You can set umask with this command**:
+   - **You can setup temporary-tools with this command**:
      ```
-     umask 022
-     ```
-
-
-**Note:** Since variables and umask settings are session-specific, you must redefine them whenever you open a new terminal or restart your session. To verify that they are correctly applied, run the following command:
-
-   - **You can set check the variable and umask with this command**:
-     ```
-     echo $radixlinux
-     umask
-     ```
-
-3. After verifying the environment variables, we need to create essential system directories and mount points required for the kernel to interact with your hardware.
-- **Now create new directories with this command**:
-     ```
-     mkdir $radixlinux/sys
-     mkdir $radixlinux/proc
-     mkdir $radixlinux/run
-     mkdir $radixlinux/dev
-     mkdir $radixlinux/dev/pts
-     mkdir $radixlinux/dev/shm
+     ./temp-tools.sh
      ```
 
 
- 4. After that, you need to mount your host systems kernel drivers because we dont have any yet:)
+3. Extended Temporary Tools
+
+This step expands the bootstrap environment by adding additional helper utilities that support compilation, patching, and intermediate build operations required by later stages.
+
+   - **You can setup extended temporary tools with this command**:
+     ```
+     ./temp-tools-extra.sh
+     ```
+
+
+ 4. Basic System Softwares
+
+This stage builds and installs essential base system software such as core utilities, shell tools, and fundamental system binaries required for a functional Linux environment.
     
- - **Now mount some directories with this command**:
+ - **You can setup basic system softwares with this command**:
      ```
-     mount -v -t sysfs sysfs $radixlinux/sys
-     mount -v -t proc proc $radixlinux/proc
-     mount -v -t tmpfs tmpfs $radixlinux/run
-     mount -v --bind /dev $radixlinux/dev
-     mount -v --bind /dev/pts $radixlinux/dev/pts
-     mount -v -t tmpfs tmpfs $radixlinux/dev/shm
+     ./basic-software.sh
      ```
+
      
- 5. After you finished testing, you need to unmount them so come back here later and **skip this part for now :)** 
-- **You can unmount the mounted directories with this command**:
+ 5. Kernel Build
+
+This step compiles and installs the Linux kernel, which provides hardware interaction, process management, and core system functionality required for system boot and runtime operations.
+ 
+- **You can setup linux kernel with this command**:
      ```
-     umount -v $radixlinux/dev/shm
-     umount -v $radixlinux/dev/pts
-     umount -v $radixlinux/dev
-     umount -v $radixlinux/run
-     umount -v $radixlinux/proc
-     umount -v $radixlinux/sys
+     ./kernel-build.sh
      ```
 
 
-Enter the Chroot Virtual Environment and test everything!
+6. Bootloader Installation
 
+This stage installs and configures the bootloader responsible for system startup, allowing the kernel to be loaded and the operating system to initialize correctly.
 
-6. You have successfully reached to the end of setup phase. We will now set up a chroot environment to ensure a safe and isolated testing experience for our distribution.
-
-NOTE:(Once you finished using, go back to the 5th part and unmount before leaving!)
-
-- **Enter the chroot environment with these commands**:
+- **You can setup bootloader with this command**:
      ```
-     chroot "$radixlinux" /usr/bin/env -i   \
-         HOME=/root                  \
-         TERM="$TERM"                \
-         PS1='(radix linux chroot) \u:\w\$ ' \
-         PATH=/usr/bin:/usr/sbin     \
-         MAKEFLAGS="-j$(nproc)"      \
-         TESTSUITEFLAGS="-j$(nproc)" \
-         /bin/bash --login
-
-     exec /usr/bin/bash --login
+     ./bootloader.sh
      ```
 
-  Now you are ready to boot into our os :)
+
+7. Security Layer
+
+This stage applies system-level security configurations, permissions hardening, and baseline security policies to ensure a stable and controlled environment.
+
+- **You can setup security layer with this command**:
+     ```
+     ./security.sh
+     ```
+
+
+
+8. General Libraries
+
+This step installs core system libraries required by both system components and user applications, ensuring compatibility and runtime support.
+
+- **You can setup general libraries with this command**:
+     ```
+     ./general-libraries.sh
+     ```
+
+
+9. Networking Libraries
+
+This stage installs networking-related libraries and components required for connectivity, communication protocols, and internet functionality.
+
+- **You can setup networking libraries with this command**:
+     ```
+     ./network-libraries.sh
+     ```
+
+     
+10. Text Editors
+
+This step installs command-line and basic text editing tools required for system configuration and development tasks.
+
+- **You can setup text editors with this command**:
+     ```
+     ./text-editors.sh
+     ```
+
+  
+11. Programming Tools
+
+This stage installs development tools, compilers, interpreters, and debugging utilities required for software development on the system.
+
+- **You can setup programming tools with this command**:
+     ```
+     ./programming-tools.sh
+     ```
+
+     
+12. Graphics Libraries
+
+This step installs graphical subsystem libraries required for rendering, display management, and GUI-based applications.
+
+- **You can setup graphics libraries with this command**:
+     ```
+     ./graphic-libraries.sh
+     ```
+
+
+13. File Management Tools
+
+This final stage installs file management utilities that provide user-level file operations, system navigation, and data handling capabilities.
+
+- **You can setup file management tools with this command**:
+     ```
+     ./file-management.sh
+     ```     
+
+
 
 ## Thank you for testing our software and sharing your ideas. See you later.
 
