@@ -27,7 +27,7 @@ The build system is executed in a strict order to ensure a clean and fully funct
 
 
 
-#### 1. Toolchain Setup
+### 1. Toolchain Setup
 
 The toolchain stage initializes the compiler environment, assembler, linker, and core build utilities required to compile the rest of the system from source. This is the foundation of the entire distribution and must be completed before any other package is built.
 
