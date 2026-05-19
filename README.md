@@ -42,7 +42,7 @@ The toolchain stage initializes the compiler environment, assembler, linker, and
 
    - **You can setup the toolchain with this command**:
      ```
-     ./toolchain.sh
+     ./build/toolchain.sh
      ```
 
 
@@ -52,7 +52,7 @@ This stage installs and prepares temporary bootstrap utilities required during t
    
    - **You can setup temporary-tools with this command**:
      ```
-     ./temp-tools.sh
+     ./build/temp-tools.sh
      ```
 
 
@@ -62,7 +62,7 @@ This step expands the bootstrap environment by adding additional helper utilitie
 
    - **You can setup extended temporary tools with this command**:
      ```
-     ./temp-tools-extra.sh
+     ./build/temp-tools-extra.sh
      ```
 
 
@@ -72,7 +72,7 @@ This stage builds and installs essential base system software such as core utili
     
  - **You can setup basic system softwares with this command**:
      ```
-     ./basic-software.sh
+     ./build/basic-software.sh
      ```
 
      
@@ -82,7 +82,7 @@ This step compiles and installs the Linux kernel, which provides hardware intera
  
 - **You can setup linux kernel with this command**:
      ```
-     ./kernel-build.sh
+     ./build/kernel-build.sh
      ```
 
 
@@ -92,7 +92,7 @@ This stage installs and configures the bootloader responsible for system startup
 
 - **You can setup bootloader with this command**:
      ```
-     ./bootloader.sh
+     ./build/bootloader.sh
      ```
 
 
@@ -102,7 +102,7 @@ This stage applies system-level security configurations, permissions hardening, 
 
 - **You can setup security layer with this command**:
      ```
-     ./security.sh
+     ./build/security.sh
      ```
 
 
@@ -113,7 +113,7 @@ This step installs core system libraries required by both system components and 
 
 - **You can setup general libraries with this command**:
      ```
-     ./general-libraries.sh
+     ./build/general-libraries.sh
      ```
 
 
@@ -123,7 +123,7 @@ This stage installs networking-related libraries and components required for con
 
 - **You can setup networking libraries with this command**:
      ```
-     ./network-libraries.sh
+     ./build/network-libraries.sh
      ```
 
      
@@ -133,7 +133,7 @@ This step installs command-line and basic text editing tools required for system
 
 - **You can setup text editors with this command**:
      ```
-     ./text-editors.sh
+     ./build/text-editors.sh
      ```
 
   
@@ -143,7 +143,7 @@ This stage installs development tools, compilers, interpreters, and debugging ut
 
 - **You can setup programming tools with this command**:
      ```
-     ./programming-tools.sh
+     ./build/programming-tools.sh
      ```
 
      
@@ -153,7 +153,7 @@ This step installs graphical subsystem libraries required for rendering, display
 
 - **You can setup graphics libraries with this command**:
      ```
-     ./graphic-libraries.sh
+     ./build/graphic-libraries.sh
      ```
 
 
@@ -163,8 +163,8 @@ This final stage installs file management utilities that provide user-level file
 
 - **You can setup file management tools with this command**:
      ```
-     ./file-management.sh
-     ```     
+     ./build/file-management.sh
+     ```
 
 
 
