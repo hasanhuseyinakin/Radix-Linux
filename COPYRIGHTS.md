@@ -1,5 +1,10 @@
+# Radix Linux - Third-Party Copyrights and Licenses
 
-##The following packages and their upstream maintainers are acknowledged for their workon their packages that formed the foundation of Validebağ‑OS:
+The Radix Linux build system and automation scripts are licensed under the GNU General Public License v2.0 (or later). 
+
+However, Radix Linux is a collective work that builds a base system from various upstream source packages. The following packages and their upstream maintainers are acknowledged for their work on their packages that formed the foundation of Radix Linux. Each of these packages retains its own original open-source license (such as GPLv2, GPLv3, MIT, BSD, Apache, etc.) which can be found within their respective source archives.
+
+---
 
 
 -Python‑3.13.7: Python core developers / Python Software Foundation (CPython upstream)
@@ -171,3 +176,4 @@
 -neofetch: distro name and logo showing (Dylan Araps)
 
 -nano: a simple text editor (GNU Project)
+
