@@ -18,13 +18,13 @@ you are protected against the latest identified threats and security vulnerabili
 
 | Version     |     Supported      |
 | ----------- | -------------------|
-|  1.0 beta   | : yes              |
-|  0.9 beta   | : yes              |
-|  0.8 beta   | : yes              |
-|  0.7 beta   | : yes              |
-|  0.6 beta   | : yes              |
-|  0.5 beta   | : yes              |
-| <0.4 beta   | : no               |
+|  1.0 beta   |   yes              |
+|  0.9 beta   |   yes              |
+|  0.8 beta   |   yes              |
+|  0.7 beta   |   yes              |
+|  0.6 beta   |   yes              |
+|  0.5 beta   |   yes              |
+| <0.4 beta   |   no               |
 
 
 
