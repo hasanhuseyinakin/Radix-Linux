@@ -1,7 +1,7 @@
 # Security Policy
 
 The VFLDEEP team is committed to ensuring the stability and security of our distribution. 
-We provide a six-month security support window exclusively for our Beta and Main release versions. 
+We provide a two-month security support window exclusively for our Beta and Main release versions. 
 Please be advised that the Alpha channel is strictly reserved for experimental features and internal testing; 
 consequently, it does not receive official security patches or long-term support. 
 We strongly recommend transitioning to a supported branch for any production or daily-use environments.
@@ -10,7 +10,7 @@ We strongly recommend transitioning to a supported branch for any production or 
 
 ## Supported Versions
 
-Currently, security support is active for all stable Beta and Main releases.
+Currently, short-term security support is active for all stable Beta and Main releases.
 Our team prioritizes vulnerability patches for these versions to maintain a secure ecosystem for our users. 
 If you are running an older build or an Alpha release, we encourage you to update to the latest supported version to ensure 
 you are protected against the latest identified threats and security vulnerabilities.
@@ -18,14 +18,13 @@ you are protected against the latest identified threats and security vulnerabili
 
 | Version     |     Supported      |
 | ----------- | -------------------|
-|  0.9 beta   | : yes              |
-|  0.8 beta   | : yes              |
-|  0.7 beta   | : yes              |
-|  0.6 beta   | : yes              |
-|  0.5 beta   | : yes              |
-|  0.4 beta   | : yes              |
-|  0.3 beta   | : yes              |
-| < 0.3 beta  | : no               |
+|  1.0 beta   |   yes              |
+|  0.9 beta   |   yes              |
+|  0.8 beta   |   yes              |
+|  0.7 beta   |   yes              |
+|  0.6 beta   |   yes              |
+|  0.5 beta   |   yes              |
+| <0.4 beta   |   no               |
 
 
 
