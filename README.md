@@ -12,7 +12,7 @@
 
 <hr>
 
-## Important: Quick Start & How To Use Radix Linux Distrubition:
+## Important: Quick Start & How To Use Radix Linux Distribution:
 
 
 ### For Users: 
@@ -20,6 +20,8 @@ If you are looking for a bootable ISO or a ready-to-run distribution, please nav
 
 ### For Developers:
 This repository itself is a Source Archive & Base System. It is designed to be a transparent foundation for other distributions and to simplify release tracking. If you want to customize Radix or build it from scratch, follow the **Build Pipeline** below.
+
+Build scriptleri simdilik paketleri kontrol edip duruyor; tam derleme henuz yok. ISO ile ugrasmak istiyorsan Releases'e bak.
 
 
 ## Build Pipeline Overview
