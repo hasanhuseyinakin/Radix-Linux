@@ -4,7 +4,8 @@ Initial Package Version: 2.89
 Upstream Status: Not Submitted
 Origin: Self
 Description: Remove programs superceeded by other packages: wall, mountpoint,
-             last, lastb, logsave, mesg, sulogin, and utmpdump.
+             last, lastb, logsave, mesg, and utmpdump.
+             Keep sulogin for authenticated single-user recovery.
 
 Rediffed for version 3.13.
 
@@ -30,16 +31,10 @@ diff -Naur sysvinit-3.12.orig/src/Makefile sysvinit-3.12/src/Makefile
 +MAN8	+= shutdown.8 telinit.8 fstab-decode.8
  
  ifeq ($(DISTRO),)
--SBIN	+= sulogin bootlogd
+ SBIN	+= sulogin bootlogd
 -USRBIN	+= utmpdump wall
 -MAN1	+= utmpdump.1 wall.1
--MAN8	+= sulogin.8 bootlogd.8
-+#SBIN	+= sulogin bootlogd
-+SBIN	+= bootlogd
-+#USRBIN	+= utmpdump wall
-+#MAN1	+= utmpdump.1 wall.1
-+#MAN8	+= sulogin.8 bootlogd.8
-+MAN8	+= bootlogd.8
+ MAN8	+= sulogin.8 bootlogd.8
  endif
  
  ifeq ($(DISTRO),Debian)
@@ -58,16 +53,3 @@ diff -Naur sysvinit-3.12.orig/src/Makefile sysvinit-3.12/src/Makefile
  		$(INSTALL_DIR) $(ROOT)$(includedir)/
  		$(INSTALL_DATA) initreq.h $(ROOT)$(includedir)/
  		for lang in  '' $(patsubst ../man/po/%.po,%,$(wildcard ../man/po/??.po)); do \
-@@ -243,8 +246,8 @@
- 		#
- 		# This part is skipped on Debian systems, the
- 		# debian.preinst script takes care of it.
--		@if [ ! -p /run/initctl ]; then \
--		 echo "Creating /run/initctl"; \
--		 rm -f /run/initctl; \
--		 mknod -m 600 /run/initctl p; fi
-+		#@if [ ! -p /run/initctl ]; then \
-+		# echo "Creating /run/initctl"; \
-+		# rm -f /run/initctl; \
-+		# mknod -m 600 /run/initctl p; fi
- endif
