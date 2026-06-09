@@ -1,38 +1,28 @@
 ---
 name: Bug report
-about: Create a report to help us improve
+about: Radix Linux icin sorun bildir
 title: ''
-labels: ''
+labels: bug
 assignees: ''
-
 ---
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+**Ne bozuk?**
+Kisa aciklama.
 
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+**Radix surumu**
+- Surum veya ISO adi (ornek: 1.0 beta)
+- Kurulum tipi (live, kurulu sistem, kaynak build denemesi)
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+**Nasil tekrarlanir?**
+1. 
+2. 
+3. 
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
+**Beklenen / gerceklesen**
+Ne olmasini bekledin, ne oldu? Log varsa yapıştır.
 
-**Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
+**Sistem**
+- Mimari (x86_64 vb.)
+- BIOS / UEFI
 
-**Smartphone (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
-
-**Additional context**
-Add any other context about the problem here.
+**Ek**
