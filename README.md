@@ -8,7 +8,7 @@
  
  **Our Community Page:** https://www.reddit.com/r/RadixLinuxCommunity/
  
- **Download Latest Version:** https://github.com/VFL-DEEP/Radix-Linux/releases </p>
+ **Download Latest Version:** https://github.com/hasanhuseyinakin/Radix-Linux/releases </p>
 
 <hr>
 
@@ -16,9 +16,6 @@
 
 
 ### For Users: 
-If you are looking for a bootable ISO or a ready-to-run distribution, please navigate to the Releases section. There you can find pre-built images and latest stable versions.
-
-### For Developers:
 This repository itself is a Source Archive & Base System. It is designed to be a transparent foundation for other distributions and to simplify release tracking. If you want to customize Radix or build it from scratch, follow the **Build Pipeline** below.
 
 
