@@ -29,7 +29,7 @@ The build system is executed in a strict order to ensure a clean and fully funct
 To get started with the latest version, use the git clone command:
 
 ```
-git clone --depth 1 https://github.com/VFL-DEEP/Radix-Linux.git
+git clone --depth 1 https://github.com/hasanhuseyinakin/Radix-Linux.git
 ```
 
 
