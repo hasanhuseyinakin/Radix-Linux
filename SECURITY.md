@@ -19,9 +19,9 @@ you are protected against the latest identified threats and security vulnerabili
 | Version     |     Supported      |
 | ----------- | -------------------|
 |  1.0 beta   |   yes              |
-|  0.9 beta   |   yes              |
-|  0.8 beta   |   yes              |
-|  0.7 beta   |   yes              |
+|  0.9 beta   |   no               |
+|  0.8 beta   |   no               |
+|  0.7 beta   |   no               |
 | <0.6 beta   |   no               |
 
 
