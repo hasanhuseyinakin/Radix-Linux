@@ -2,7 +2,7 @@ cd ../toolchain-tools
 tar -xvf binutils-2.45.tar.xz
 echo " The extraction process completed! " 
 sleep 3
-cd binutils-2.45.tar.xz
+cd binutils-2.45
 mkdir -v build
 cd       build
 
@@ -17,24 +17,28 @@ cd       build
 echo " The configuration is now loaded! "
 sleep 4
 make
-echo " The source code has been compiled! "
-sleep 3
+echo "
+ The source code has been compiled! "
+sleep 4
 make install
-echo " The Binutils package has been installed! "
-sleep 2 
+echo "
+ The Binutils package has been installed! "
+sleep 4 
 cd ../.. 
 rm -Rf binutils-2.45
-echo " The build sources has been cleaned up! "
+echo "
+ The build sources has been cleaned up! "
 
 tar -xvf gcc-15.2.0.tar.xz
-echo " The extraction process completed! "
-sleep 3
+echo "
+ The extraction process completed! "
+sleep 4
 cd gcc-15.2.0
-tar -xf ../mpfr-4.2.2.tar.xz
+tar -xvf ../mpfr-4.2.2.tar.xz
 mv -v mpfr-4.2.2 mpfr
-tar -xf ../gmp-6.3.0.tar.xz
+tar -xvf ../gmp-6.3.0.tar.xz
 mv -v gmp-6.3.0 gmp
-tar -xf ../mpc-1.3.1.tar.gz
+tar -xvf ../mpc-1.3.1.tar.gz
 mv -v mpc-1.3.1 mpc
 
 case $(uname -m) in
@@ -67,15 +71,20 @@ cd build
     --disable-libvtv          \
     --disable-libstdcxx       \
     --enable-languages=c,c++
-echo " The configuration is now loaded! "
+echo "
+ The configuration is now loaded! "
 sleep 4
 make
 echo " The source code has been compiled! "
-sleep 3
+sleep 4
 make install
+cd ..
+cat gcc/limitx.h gcc/glimits.h gcc/limity.h > \
+  `dirname $($Radix_TGT-gcc -print-libgcc-file-name)`/include/limits.h
+
 echo " The Gcc package has been installed! "
-sleep 2
-cd ../..
+sleep 4
+cd ..
 rm -Rf gcc-15.2.0
 echo "The build sources has been cleaned up! "
 
