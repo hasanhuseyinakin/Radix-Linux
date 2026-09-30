@@ -136,5 +136,23 @@ cd ..
 rm -Rf glibc-2.42
 echo " 
 The unnecessary packages removed!"
-
-    
+sleep 3
+cd ../kernel-linux
+echo " 
+Intallation process for linux kernel is starting, please wait!"
+git clone --depth 1 https://github.com/torvalds/linux.git .
+echo "
+The download process completed!"
+sleep 5
+cd linux
+make mrproper
+make headers
+find usr/include -type f ! -name '*.h' -delete
+cp -rv usr/include $Radix/usr
+echo " 
+The linux kernel API headers are successfully installed!"
+cd ..
+rm -Rf linux
+echo "
+The unnecessary packages removed!"
+sleep 3
