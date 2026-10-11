@@ -158,3 +158,31 @@ echo "
 The unnecessary packages removed!"
 sleep 3
 
+tar -xvf  gcc-15.2.0.tar.xz
+echo " 
+The extraction process completed! "
+cd gcc-15.2.0
+mkdir -v build
+cd       build
+
+../libstdc++-v3/configure      \
+    --host=$Radix_TGT          \
+    --build=$(../config.guess) \
+    --prefix=/usr              \
+    --disable-multilib         \
+    --disable-nls              \
+    --disable-libstdcxx-pch    \
+    --with-gxx-include-dir=/tools/$Radix_TGT/include/c++/15.2.0
+echo "
+The configuration is now loaded! "
+make
+echo "
+The package is now compiled! "
+make DESTDIR=$Radix install
+echo "
+The gcc-15.2.0_Libstdc++ package has successfully installed"
+rm -v $Radix/usr/lib/lib{stdc++{,exp,fs},supc++}.la
+cd ../.. 
+rm -Rf gcc-15.2.0
+echo " 
+The unnecessary packages removed! "
