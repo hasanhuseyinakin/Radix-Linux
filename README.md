@@ -1,4 +1,4 @@
-<p align="center"><img src="/img/logo.jpg" alt="radix os logo" width="256"></p>
+<p align="center"><img src="/img/logo.png" alt="radix os logo" width="256"></p>
 
 <h1 align="center">Radix Linux 1.0 Beta Version</h1>
 
